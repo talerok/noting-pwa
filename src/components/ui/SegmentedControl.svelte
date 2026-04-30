@@ -15,11 +15,11 @@
   let selectedIndex = $derived(options.findIndex((o) => o.value === selected));
 </script>
 
-<div class="relative flex rounded-[10px] glass-input p-[2px]">
+<div class="relative flex overflow-hidden rounded-[10px] bg-black/8 dark:bg-white/12 p-[2px]">
   <!-- Sliding pill -->
   <div
-    class="absolute top-[2px] bottom-[2px] rounded-[9px] glass shadow-sm transition-transform duration-300 ease-out"
-    style="width: calc({100 / options.length}% - {options.length > 1 ? 0 : 0}px); transform: translateX({selectedIndex * 100}%);"
+    class="absolute top-[2px] bottom-[2px] left-[2px] rounded-[9px] transition-transform duration-300 ease-out bg-white shadow-[0_1px_3px_rgba(0,0,0,0.12),0_1px_2px_rgba(0,0,0,0.08)] dark:bg-white/15 dark:shadow-none"
+    style="width: calc((100% - 4px) / {options.length}); transform: translateX({selectedIndex * 100}%);"
   ></div>
 
   {#each options as opt}
