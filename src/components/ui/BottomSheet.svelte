@@ -27,12 +27,15 @@
   <!-- svelte-ignore a11y_click_events_have_key_events -->
   <!-- svelte-ignore a11y_no_static_element_interactions -->
   <div
-    class="fixed inset-0 z-50 flex items-end justify-center bg-black/40 backdrop-blur-sm md:items-center"
+    class="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm"
     onclick={handleBackdrop}
     transition:fade={{ duration: 200 }}
+  ></div>
+  <div
+    class="fixed inset-0 z-50 flex items-end justify-center pointer-events-none md:items-center"
   >
     <div
-      class="w-full max-h-[85vh] overflow-y-auto rounded-t-[16px] bg-ios-bg-elevated safe-area-bottom dark:bg-ios-bg-elevated-dark md:max-w-[420px] md:rounded-ios-lg md:rounded-b-ios-lg"
+      class="pointer-events-auto w-full max-h-[85vh] overflow-y-auto rounded-t-[16px] bg-ios-bg-elevated safe-area-bottom dark:bg-ios-bg-elevated-dark md:max-w-[420px] md:rounded-ios-lg md:rounded-b-ios-lg"
       transition:fly={{ y: 300, duration: 300 }}
     >
       {#if title}

@@ -12,15 +12,18 @@
   let { isMobile, showDetail, sidebar, detail }: Props = $props();
 </script>
 
-<div class="flex h-full w-full overflow-hidden bg-ios-bg-secondary dark:bg-ios-bg-grouped-dark">
+<div class="relative flex h-full w-full overflow-hidden bg-ios-bg-secondary dark:bg-ios-bg-grouped-dark">
   {#if isMobile}
+    <div class="flex h-full w-full flex-col">
+      {@render sidebar()}
+    </div>
     {#if showDetail}
-      <div class="flex h-full w-full flex-col" in:fly={{ x: 300, duration: 250 }} out:fly={{ x: 300, duration: 200 }}>
+      <div
+        class="absolute inset-0 z-10 flex h-full w-full flex-col"
+        in:fly={{ x: 300, duration: 250 }}
+        out:fly={{ x: 300, duration: 200 }}
+      >
         {@render detail()}
-      </div>
-    {:else}
-      <div class="flex h-full w-full flex-col">
-        {@render sidebar()}
       </div>
     {/if}
   {:else}
