@@ -1,6 +1,6 @@
 <script lang="ts">
   import { t } from '../../lib/i18n/index.svelte.js';
-  import { fade, fly } from 'svelte/transition';
+  import { fly } from 'svelte/transition';
   import type { Snippet } from 'svelte';
 
   interface Props {
@@ -29,7 +29,6 @@
   <div
     class="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm"
     onclick={handleBackdrop}
-    transition:fade={{ duration: 200 }}
   ></div>
   <div
     class="fixed inset-0 z-50 flex items-end justify-center pointer-events-none md:items-center"
