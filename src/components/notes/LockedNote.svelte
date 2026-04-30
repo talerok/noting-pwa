@@ -43,7 +43,7 @@
 
 <div class="flex h-full flex-col">
   <!-- Toolbar -->
-  <div class="safe-area-top grid grid-cols-[1fr_auto_1fr] items-center border-b border-ios-separator px-4 dark:border-ios-separator-dark" style="min-height: 56px;">
+  <div class="safe-area-top grid grid-cols-[1fr_auto_1fr] items-center border-b border-ios-separator/50 px-4 dark:border-ios-separator-dark/50" style="min-height: 56px;">
     <div class="flex items-center justify-start">
       {#if isMobile}
         <button class="flex items-center gap-0.5 text-ios-blue active:opacity-60" onclick={onback}>
@@ -68,7 +68,7 @@
     <input
       type="password"
       placeholder={t('enterPassword')}
-      class="w-full max-w-[280px] rounded-ios bg-ios-gray6 px-4 py-3 text-center text-[17px] text-ios-label outline-none placeholder:text-ios-gray dark:bg-ios-bg-elevated2-dark dark:text-ios-label-dark"
+      class="w-full max-w-[280px] rounded-ios glass-input px-4 py-3 text-center text-[17px] text-ios-label outline-none placeholder:text-ios-gray dark:text-ios-label-dark"
       bind:value={password}
       onkeydown={handleKeydown}
     />

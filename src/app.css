@@ -16,8 +16,8 @@
   --color-ios-gray5: #E5E5EA;
   --color-ios-gray6: #F2F2F7;
 
-  --color-ios-separator: rgba(60, 60, 67, 0.12);
-  --color-ios-separator-dark: rgba(84, 84, 88, 0.36);
+  --color-ios-separator: rgba(60, 60, 67, 0.08);
+  --color-ios-separator-dark: rgba(84, 84, 88, 0.25);
 
   --color-ios-bg: #FFFFFF;
   --color-ios-bg-dark: #000000;
@@ -37,8 +37,22 @@
   --color-ios-label-tertiary: rgba(60, 60, 67, 0.3);
   --color-ios-label-tertiary-dark: rgba(235, 235, 245, 0.3);
 
-  --radius-ios: 10px;
-  --radius-ios-lg: 13px;
+  --color-glass-bg: rgba(255, 255, 255, 0.45);
+  --color-glass-bg-dark: rgba(40, 40, 40, 0.55);
+  --color-glass-bg-thin: rgba(255, 255, 255, 0.25);
+  --color-glass-bg-thin-dark: rgba(40, 40, 40, 0.35);
+  --color-glass-bg-thick: rgba(255, 255, 255, 0.65);
+  --color-glass-bg-thick-dark: rgba(40, 40, 40, 0.70);
+  --color-glass-border: rgba(255, 255, 255, 0.35);
+  --color-glass-border-dark: rgba(255, 255, 255, 0.12);
+  --color-glass-input: rgba(120, 120, 128, 0.12);
+  --color-glass-input-dark: rgba(120, 120, 128, 0.24);
+  --color-glass-selected: rgba(0, 122, 255, 0.12);
+  --color-glass-selected-dark: rgba(0, 122, 255, 0.20);
+
+  --radius-ios: 12px;
+  --radius-ios-lg: 16px;
+  --radius-ios-xl: 22px;
 }
 
 html, body, #app {
@@ -51,12 +65,12 @@ html, body, #app {
 
 body {
   font-family: var(--font-sans);
-  background-color: var(--color-ios-bg-secondary);
+  background-color: #E8E8ED;
   color: var(--color-ios-label);
 }
 
 .dark body {
-  background-color: var(--color-ios-bg-grouped-dark);
+  background-color: #1A1A1A;
   color: var(--color-ios-label-dark);
 }
 
@@ -64,4 +78,95 @@ body {
 @supports (padding: env(safe-area-inset-top)) {
   .safe-area-top { padding-top: env(safe-area-inset-top); }
   .safe-area-bottom { padding-bottom: env(safe-area-inset-bottom); }
+}
+
+/* Liquid Glass utilities */
+.glass {
+  background: var(--color-glass-bg);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 0.5px solid var(--color-glass-border);
+}
+.dark .glass {
+  background: var(--color-glass-bg-dark);
+  border-color: var(--color-glass-border-dark);
+}
+
+.glass-thin {
+  background: var(--color-glass-bg-thin);
+  backdrop-filter: blur(24px) saturate(200%);
+  -webkit-backdrop-filter: blur(24px) saturate(200%);
+  border: 0.5px solid var(--color-glass-border);
+}
+.dark .glass-thin {
+  background: var(--color-glass-bg-thin-dark);
+  border-color: var(--color-glass-border-dark);
+}
+
+.glass-thick {
+  background: var(--color-glass-bg-thick);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  border: 0.5px solid var(--color-glass-border);
+}
+.dark .glass-thick {
+  background: var(--color-glass-bg-thick-dark);
+  border-color: var(--color-glass-border-dark);
+}
+
+.glass-elevated {
+  background: var(--color-glass-bg);
+  backdrop-filter: blur(24px) saturate(200%);
+  -webkit-backdrop-filter: blur(24px) saturate(200%);
+  border: 0.5px solid var(--color-glass-border);
+  box-shadow:
+    0 0 0 0.5px rgba(255, 255, 255, 0.2),
+    0 2px 8px rgba(0, 0, 0, 0.08),
+    0 8px 32px rgba(0, 0, 0, 0.06),
+    inset 0 0.5px 0 rgba(255, 255, 255, 0.4);
+}
+.dark .glass-elevated {
+  background: var(--color-glass-bg-dark);
+  border-color: var(--color-glass-border-dark);
+  box-shadow:
+    0 0 0 0.5px rgba(255, 255, 255, 0.08),
+    0 2px 8px rgba(0, 0, 0, 0.25),
+    0 8px 32px rgba(0, 0, 0, 0.20),
+    inset 0 0.5px 0 rgba(255, 255, 255, 0.10);
+}
+
+.glass-input {
+  background: var(--color-glass-input);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 0.5px solid transparent;
+}
+.dark .glass-input {
+  background: var(--color-glass-input-dark);
+}
+
+/* Reduced transparency fallback */
+@media (prefers-reduced-transparency: reduce) {
+  .glass, .glass-thin, .glass-thick, .glass-elevated {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  .glass, .glass-thick {
+    background: rgba(255, 255, 255, 0.92);
+  }
+  .dark .glass, .dark .glass-thick {
+    background: rgba(28, 28, 30, 0.95);
+  }
+  .glass-thin {
+    background: rgba(255, 255, 255, 0.85);
+  }
+  .dark .glass-thin {
+    background: rgba(28, 28, 30, 0.88);
+  }
+  .glass-elevated {
+    background: rgba(255, 255, 255, 0.95);
+  }
+  .dark .glass-elevated {
+    background: rgba(28, 28, 30, 0.97);
+  }
 }

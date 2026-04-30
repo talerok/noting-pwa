@@ -13,12 +13,12 @@
   let { options, selected, onchange }: Props = $props();
 </script>
 
-<div class="flex rounded-[8px] bg-ios-gray6 p-[2px] dark:bg-ios-bg-elevated2-dark">
+<div class="flex rounded-[10px] glass-input p-[2px]">
   {#each options as opt}
     <button
-      class="flex-1 rounded-[7px] px-3 py-[6px] text-[13px] font-medium transition-all
+      class="flex-1 rounded-[9px] px-3 py-[6px] text-[13px] font-medium transition-all
         {selected === opt.value
-          ? 'bg-white text-ios-label shadow-sm dark:bg-ios-bg-elevated-dark dark:text-ios-label-dark'
+          ? 'glass text-ios-label shadow-sm dark:text-ios-label-dark'
           : 'text-ios-label-secondary dark:text-ios-label-secondary-dark'}"
       onclick={() => onchange(opt.value)}
     >

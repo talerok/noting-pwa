@@ -48,7 +48,7 @@
   <input
     type="password"
     placeholder={showConfirm ? t('newPassword') : t('enterPassword')}
-    class="w-full rounded-ios bg-ios-gray6 px-4 py-3 text-[17px] text-ios-label outline-none dark:bg-ios-bg-elevated2-dark dark:text-ios-label-dark"
+    class="w-full rounded-ios glass-input px-4 py-3 text-[17px] text-ios-label outline-none dark:text-ios-label-dark"
     bind:value={password}
     onkeydown={handleKeydown}
   />
@@ -57,7 +57,7 @@
     <input
       type="password"
       placeholder={t('confirmPassword')}
-      class="mt-3 w-full rounded-ios bg-ios-gray6 px-4 py-3 text-[17px] text-ios-label outline-none dark:bg-ios-bg-elevated2-dark dark:text-ios-label-dark"
+      class="mt-3 w-full rounded-ios glass-input px-4 py-3 text-[17px] text-ios-label outline-none dark:text-ios-label-dark"
       bind:value={confirm}
       onkeydown={handleKeydown}
     />

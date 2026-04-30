@@ -27,18 +27,18 @@
   <!-- svelte-ignore a11y_click_events_have_key_events -->
   <!-- svelte-ignore a11y_no_static_element_interactions -->
   <div
-    class="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm"
+    class="fixed inset-0 z-50 bg-black/30 backdrop-blur-sm"
     onclick={handleBackdrop}
   ></div>
   <div
     class="fixed inset-0 z-50 flex items-end justify-center pointer-events-none md:items-center"
   >
     <div
-      class="pointer-events-auto w-full max-h-[85vh] overflow-y-auto rounded-t-[16px] bg-ios-bg-elevated safe-area-bottom dark:bg-ios-bg-elevated-dark md:max-w-[420px] md:rounded-ios-lg md:rounded-b-ios-lg"
-      transition:fly={{ y: 300, duration: 300 }}
+      class="pointer-events-auto w-full max-h-[85vh] overflow-y-auto rounded-t-[22px] glass-elevated safe-area-bottom md:max-w-[420px] md:rounded-ios-xl"
+      transition:fly={{ y: 300, duration: 400 }}
     >
       {#if title}
-        <div class="flex items-center justify-between px-4 py-3 border-b border-ios-separator dark:border-ios-separator-dark">
+        <div class="flex items-center justify-between px-4 py-3 border-b border-ios-separator/50 dark:border-ios-separator-dark/50">
           <h2 class="text-[17px] font-semibold text-ios-label dark:text-ios-label-dark">{title}</h2>
           <button
             class="text-ios-blue text-[17px] font-normal active:opacity-60"

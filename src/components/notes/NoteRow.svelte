@@ -14,8 +14,8 @@
 </script>
 
 <button
-  class="flex w-full items-start gap-3 px-4 py-3 text-left transition-colors active:bg-ios-gray5 dark:active:bg-ios-bg-elevated2-dark
-    {selected ? 'bg-ios-blue/10 dark:bg-ios-blue/20' : ''}"
+  class="flex w-full items-start gap-3 px-4 py-3 text-left transition-colors active:bg-white/10 dark:active:bg-white/5
+    {selected ? 'bg-glass-selected dark:bg-glass-selected-dark' : ''}"
   onclick={onselect}
 >
   <div class="flex-1 min-w-0">

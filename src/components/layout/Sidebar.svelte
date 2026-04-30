@@ -15,7 +15,7 @@
   let { store, onCreateNote, onSelectNote, onOpenSettings }: Props = $props();
 </script>
 
-<div class="flex h-full flex-col bg-ios-bg-secondary dark:bg-ios-bg-grouped-dark">
+<div class="flex h-full flex-col glass-thick">
   <!-- Header -->
   <div class="safe-area-top">
     <div class="flex items-center justify-between px-4 pt-3 pb-2">

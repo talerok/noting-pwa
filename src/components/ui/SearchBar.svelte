@@ -16,13 +16,13 @@
   <input
     type="text"
     placeholder={t('search')}
-    class="w-full rounded-ios bg-ios-gray5 py-2 pl-9 pr-3 text-[16px] text-ios-label outline-none placeholder:text-ios-gray dark:bg-ios-bg-elevated2-dark dark:text-ios-label-dark dark:placeholder:text-ios-gray"
+    class="w-full rounded-ios glass-input py-2 pl-9 pr-3 text-[16px] text-ios-label outline-none placeholder:text-ios-gray dark:text-ios-label-dark dark:placeholder:text-ios-gray"
     {value}
     oninput={(e) => oninput(e.currentTarget.value)}
   />
   {#if value}
     <button
-      class="absolute right-2 top-1/2 -translate-y-1/2 flex items-center justify-center w-5 h-5 rounded-full bg-ios-gray3 text-white dark:bg-ios-gray"
+      class="absolute right-2 top-1/2 -translate-y-1/2 flex items-center justify-center w-5 h-5 rounded-full bg-ios-gray3/80 text-white dark:bg-ios-gray/80"
       onclick={() => oninput('')}
       aria-label="Clear search"
     >

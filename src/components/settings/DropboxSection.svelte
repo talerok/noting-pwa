@@ -46,7 +46,7 @@
   </h3>
 
   {#if syncStore.isConnected}
-    <div class="rounded-ios bg-ios-bg dark:bg-ios-bg-elevated-dark">
+    <div class="rounded-ios glass">
       <!-- Status -->
       <div class="flex items-center justify-between px-4 py-3">
         <div class="flex items-center gap-2">
@@ -66,7 +66,7 @@
         <p class="px-4 pb-3 text-[14px] text-ios-red">{syncStore.errorMessage}</p>
       {/if}
 
-      <div class="border-t border-ios-separator dark:border-ios-separator-dark">
+      <div class="border-t border-ios-separator/50 dark:border-ios-separator-dark/50">
         <button
           class="w-full px-4 py-3 text-left text-[17px] text-ios-red active:opacity-60"
           onclick={() => syncStore.disconnect()}

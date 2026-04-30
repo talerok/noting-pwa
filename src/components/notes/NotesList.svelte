@@ -19,7 +19,7 @@
     </p>
   </div>
 {:else}
-  <div class="divide-y divide-ios-separator dark:divide-ios-separator-dark">
+  <div class="divide-y divide-ios-separator/50 dark:divide-ios-separator-dark/50">
     {#each notes as note (note.id)}
       <NoteRow
         {note}

@@ -36,7 +36,7 @@
   </h3>
   <input
     type="text"
-    class="w-full rounded-ios bg-ios-gray6 px-4 py-3 text-[17px] text-ios-label outline-none dark:bg-ios-bg-elevated2-dark dark:text-ios-label-dark"
+    class="w-full rounded-ios glass-input px-4 py-3 text-[17px] text-ios-label outline-none dark:text-ios-label-dark"
     bind:value={title}
     onkeydown={handleKeydown}
   />
