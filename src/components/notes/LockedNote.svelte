@@ -75,7 +75,7 @@
       <p class="text-[14px] text-ios-red">{error}</p>
     {/if}
 
-    <Button onclick={handleUnlock} disabled={loading || !password.trim()}>
+    <Button variant="secondary" onclick={handleUnlock} disabled={loading || !password.trim()}>
       {t('unlock')}
     </Button>
   </div>
