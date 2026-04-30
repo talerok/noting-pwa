@@ -42,6 +42,6 @@
   />
   <div class="mt-4 flex gap-3">
     <Button variant="secondary" onclick={onclose} class="flex-1">{t('cancel')}</Button>
-    <Button onclick={handleSubmit} class="flex-1" disabled={!title.trim()}>{t('save')}</Button>
+    <Button variant="secondary" onclick={handleSubmit} class="flex-1" disabled={!title.trim()}>{t('save')}</Button>
   </div>
 </Modal>

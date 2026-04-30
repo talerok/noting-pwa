@@ -79,29 +79,26 @@
 {/if}
 
 <div class="flex h-full flex-col">
-  <!-- Toolbar -->
-  <div class="safe-area-top grid grid-cols-[1fr_auto_1fr] items-center border-b border-ios-separator px-4 dark:border-ios-separator-dark" style="min-height: 56px;">
-    <div class="flex items-center justify-start">
-      {#if isMobile}
-        <Button variant="secondary" onclick={onback} class="h-10 w-10 !rounded-full !px-0">
-          <Icon name="chevronLeft" size={24} />
-        </Button>
-      {/if}
-    </div>
-
-    <div class="flex items-center gap-1 px-2">
-      {#if store.loadedNote?.isPinned}
-        <Icon name="pin" size={16} class="text-ios-orange" />
-      {/if}
-      <span class="max-w-[200px] truncate text-[19px] font-semibold text-ios-label dark:text-ios-label-dark">
-        {store.loadedNote?.title ?? ''}
-      </span>
-    </div>
-
-    <div class="flex items-center justify-end">
-      <div class="relative">
-        <Button variant="secondary" onclick={toggleMenu} class="h-10 w-10 !rounded-full !px-0">
-          <Icon name="ellipsis" size={24} />
+  <!-- Header -->
+  <div class="safe-area-top">
+    <div class="flex items-center justify-between px-4 pt-3 pb-2">
+      <div class="flex min-w-0 items-center gap-1.5">
+        {#if store.loadedNote?.isPinned}
+          <Icon name="pin" size={18} class="flex-shrink-0 text-ios-orange" />
+        {/if}
+        <h1 class="truncate text-[34px] font-bold text-ios-label dark:text-ios-label-dark">
+          {store.loadedNote?.title ?? ''}
+        </h1>
+      </div>
+      <div class="flex flex-shrink-0 items-center gap-2">
+        {#if isMobile}
+          <Button variant="secondary" onclick={onback} class="h-9 w-9 !rounded-full !px-0">
+            <Icon name="chevronLeft" size={22} />
+          </Button>
+        {/if}
+        <div class="relative">
+        <Button variant="secondary" onclick={toggleMenu} class="h-9 w-9 !rounded-full !px-0">
+          <Icon name="ellipsis" size={22} />
         </Button>
 
       {#if menuOpen}
@@ -137,6 +134,7 @@
           </button>
         </div>
       {/if}
+      </div>
       </div>
     </div>
   </div>

@@ -42,19 +42,18 @@
 </script>
 
 <div class="flex h-full flex-col">
-  <!-- Toolbar -->
-  <div class="safe-area-top grid grid-cols-[1fr_auto_1fr] items-center border-b border-ios-separator/50 px-4 dark:border-ios-separator-dark/50" style="min-height: 56px;">
-    <div class="flex items-center justify-start">
+  <!-- Header -->
+  <div class="safe-area-top">
+    <div class="flex items-center justify-between px-4 pt-3 pb-2">
+      <h1 class="min-w-0 truncate text-[34px] font-bold text-ios-label dark:text-ios-label-dark">
+        {store.loadedNote?.title ?? ''}
+      </h1>
       {#if isMobile}
-        <Button variant="secondary" onclick={onback} class="h-10 w-10 !rounded-full !px-0">
-          <Icon name="chevronLeft" size={24} />
+        <Button variant="secondary" onclick={onback} class="h-9 w-9 flex-shrink-0 !rounded-full !px-0">
+          <Icon name="chevronLeft" size={22} />
         </Button>
       {/if}
     </div>
-    <span class="max-w-[200px] truncate px-2 text-[19px] font-semibold text-ios-label dark:text-ios-label-dark">
-      {store.loadedNote?.title ?? ''}
-    </span>
-    <div></div>
   </div>
 
   <!-- Lock UI -->

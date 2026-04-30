@@ -81,6 +81,6 @@
 
   <div class="mt-4 flex gap-3">
     <Button variant="secondary" onclick={onclose} class="flex-1">{t('cancel')}</Button>
-    <Button onclick={handleSubmit} class="flex-1" disabled={!currentPwd || !newPwd || loading}>{t('done')}</Button>
+    <Button variant="secondary" onclick={handleSubmit} class="flex-1" disabled={!currentPwd || !newPwd || loading}>{t('done')}</Button>
   </div>
 </Modal>
