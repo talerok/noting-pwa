@@ -14,7 +14,7 @@ export default {
   appearanceLight: 'Light',
   appearanceDark: 'Dark',
   language: 'Language',
-  setPassword: 'Set Password',
+  setPassword: 'Password',
   changePassword: 'Change Password',
   removePassword: 'Remove Password',
   currentPassword: 'Current password',

@@ -14,7 +14,7 @@ export default {
   appearanceLight: 'Светлая',
   appearanceDark: 'Тёмная',
   language: 'Язык',
-  setPassword: 'Установить пароль',
+  setPassword: 'Пароль',
   changePassword: 'Сменить пароль',
   removePassword: 'Убрать пароль',
   currentPassword: 'Текущий пароль',

@@ -59,20 +59,17 @@
             {statusLabel()}
           </span>
         </div>
-        <Button variant="ghost" onclick={handleSync}>{t('syncNow')}</Button>
+        <Button variant="secondary" onclick={handleSync}>{t('syncNow')}</Button>
       </div>
 
       {#if syncStore.errorMessage}
         <p class="px-4 pb-3 text-[14px] text-ios-red">{syncStore.errorMessage}</p>
       {/if}
 
-      <div class="border-t border-ios-separator dark:border-ios-separator-dark">
-        <button
-          class="w-full px-4 py-3 text-left text-[17px] text-ios-red active:opacity-60"
-          onclick={() => syncStore.disconnect()}
-        >
+      <div class="border-t border-ios-separator dark:border-ios-separator-dark px-4 py-3">
+        <Button variant="destructive" onclick={() => syncStore.disconnect()} class="w-full">
           {t('disconnect')}
-        </button>
+        </Button>
       </div>
     </div>
   {:else}

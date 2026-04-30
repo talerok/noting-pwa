@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { t } from '../../lib/i18n/index.svelte.js';
   import { fly } from 'svelte/transition';
   import type { Snippet } from 'svelte';
   import Button from './Button.svelte';
+  import Icon from './Icon.svelte';
 
   interface Props {
     open: boolean;
@@ -41,7 +41,9 @@
       {#if title}
         <div class="flex items-center justify-between px-4 py-3 border-b border-ios-separator dark:border-ios-separator-dark">
           <h2 class="text-[17px] font-semibold text-ios-label dark:text-ios-label-dark">{title}</h2>
-          <Button variant="secondary" onclick={onclose}>{t('done')}</Button>
+          <Button variant="secondary" onclick={onclose} class="h-9 w-9 !rounded-full !px-0">
+            <Icon name="check" size={22} />
+          </Button>
         </div>
       {/if}
 
