@@ -16,7 +16,7 @@
   <input
     type="text"
     placeholder={t('search')}
-    class="w-full rounded-ios bg-ios-gray6 py-2 pl-9 pr-3 text-[16px] text-ios-label outline-none placeholder:text-ios-gray dark:bg-ios-bg-elevated2-dark dark:text-ios-label-dark dark:placeholder:text-ios-gray"
+    class="w-full rounded-ios bg-ios-gray5 py-2 pl-9 pr-3 text-[16px] text-ios-label outline-none placeholder:text-ios-gray dark:bg-ios-bg-elevated2-dark dark:text-ios-label-dark dark:placeholder:text-ios-gray"
     {value}
     oninput={(e) => oninput(e.currentTarget.value)}
   />
