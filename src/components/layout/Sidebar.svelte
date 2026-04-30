@@ -4,6 +4,7 @@
   import SearchBar from '../ui/SearchBar.svelte';
   import NotesList from '../notes/NotesList.svelte';
   import Icon from '../ui/Icon.svelte';
+  import Button from '../ui/Button.svelte';
 
   interface Props {
     store: NotesStore;
@@ -21,20 +22,12 @@
     <div class="flex items-center justify-between px-4 pt-3 pb-2">
       <h1 class="text-[34px] font-bold text-ios-label dark:text-ios-label-dark">{t('appTitle')}</h1>
       <div class="flex items-center gap-2">
-        <button
-          class="flex h-9 w-9 items-center justify-center rounded-full text-ios-blue active:opacity-60"
-          onclick={onOpenSettings}
-          aria-label={t('settings')}
-        >
+        <Button variant="secondary" onclick={onOpenSettings} class="h-9 w-9 !rounded-full !px-0">
           <Icon name="gear" size={22} />
-        </button>
-        <button
-          class="flex h-9 w-9 items-center justify-center rounded-full text-ios-blue active:opacity-60"
-          onclick={onCreateNote}
-          aria-label={t('newNote')}
-        >
+        </Button>
+        <Button variant="secondary" onclick={onCreateNote} class="h-9 w-9 !rounded-full !px-0">
           <Icon name="plus" size={22} />
-        </button>
+        </Button>
       </div>
     </div>
   </div>

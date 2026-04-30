@@ -66,7 +66,7 @@
         <p class="px-4 pb-3 text-[14px] text-ios-red">{syncStore.errorMessage}</p>
       {/if}
 
-      <div class="border-t border-ios-separator/50 dark:border-ios-separator-dark/50">
+      <div class="border-t border-ios-separator dark:border-ios-separator-dark">
         <button
           class="w-full px-4 py-3 text-left text-[17px] text-ios-red active:opacity-60"
           onclick={() => syncStore.disconnect()}
@@ -76,7 +76,7 @@
       </div>
     </div>
   {:else}
-    <Button onclick={handleConnect} disabled={connecting} class="w-full">
+    <Button variant="secondary" onclick={handleConnect} disabled={connecting} class="w-full">
       {connecting ? t('connectingDropbox') : t('connectDropbox')}
     </Button>
   {/if}

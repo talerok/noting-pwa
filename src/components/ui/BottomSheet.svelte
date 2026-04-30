@@ -2,6 +2,7 @@
   import { t } from '../../lib/i18n/index.svelte.js';
   import { fly } from 'svelte/transition';
   import type { Snippet } from 'svelte';
+  import Button from './Button.svelte';
 
   interface Props {
     open: boolean;
@@ -38,12 +39,9 @@
       transition:fly={{ y: 300, duration: 400 }}
     >
       {#if title}
-        <div class="flex items-center justify-between px-4 py-3 border-b border-ios-separator/50 dark:border-ios-separator-dark/50">
+        <div class="flex items-center justify-between px-4 py-3 border-b border-ios-separator dark:border-ios-separator-dark">
           <h2 class="text-[17px] font-semibold text-ios-label dark:text-ios-label-dark">{title}</h2>
-          <button
-            class="text-ios-blue text-[17px] font-normal active:opacity-60"
-            onclick={onclose}
-          >{t('done')}</button>
+          <Button variant="secondary" onclick={onclose}>{t('done')}</Button>
         </div>
       {/if}
 
