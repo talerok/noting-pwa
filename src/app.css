@@ -116,9 +116,9 @@ body {
 }
 
 .glass-elevated {
-  background: var(--color-glass-bg);
-  backdrop-filter: blur(24px) saturate(200%);
-  -webkit-backdrop-filter: blur(24px) saturate(200%);
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(40px) saturate(200%);
+  -webkit-backdrop-filter: blur(40px) saturate(200%);
   border: 0.5px solid var(--color-glass-border);
   box-shadow:
     0 0 0 0.5px rgba(255, 255, 255, 0.2),
@@ -127,7 +127,7 @@ body {
     inset 0 0.5px 0 rgba(255, 255, 255, 0.4);
 }
 .dark .glass-elevated {
-  background: var(--color-glass-bg-dark);
+  background: rgba(50, 50, 50, 0.82);
   border-color: var(--color-glass-border-dark);
   box-shadow:
     0 0 0 0.5px rgba(255, 255, 255, 0.08),
