@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { fly } from 'svelte/transition';
   import type { Snippet } from 'svelte';
 
   interface Props {
@@ -14,7 +15,7 @@
 <div class="flex h-full w-full overflow-hidden bg-ios-bg-secondary dark:bg-ios-bg-grouped-dark">
   {#if isMobile}
     {#if showDetail}
-      <div class="flex h-full w-full flex-col">
+      <div class="flex h-full w-full flex-col" in:fly={{ x: 300, duration: 250 }} out:fly={{ x: 300, duration: 200 }}>
         {@render detail()}
       </div>
     {:else}

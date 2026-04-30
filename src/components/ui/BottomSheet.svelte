@@ -1,5 +1,6 @@
 <script lang="ts">
   import { t } from '../../lib/i18n/index.svelte.js';
+  import { fade, fly } from 'svelte/transition';
   import type { Snippet } from 'svelte';
 
   interface Props {
@@ -28,13 +29,12 @@
   <div
     class="fixed inset-0 z-50 flex items-end justify-center bg-black/40 backdrop-blur-sm md:items-center"
     onclick={handleBackdrop}
+    transition:fade={{ duration: 200 }}
   >
-    <div class="w-full max-h-[85vh] overflow-y-auto rounded-t-[16px] bg-ios-bg-elevated safe-area-bottom dark:bg-ios-bg-elevated-dark md:max-w-[420px] md:rounded-ios-lg md:rounded-b-ios-lg">
-      <!-- Handle bar -->
-      <div class="flex justify-center pt-2 pb-1 md:hidden">
-        <div class="h-[5px] w-9 rounded-full bg-ios-gray3 dark:bg-ios-gray"></div>
-      </div>
-
+    <div
+      class="w-full max-h-[85vh] overflow-y-auto rounded-t-[16px] bg-ios-bg-elevated safe-area-bottom dark:bg-ios-bg-elevated-dark md:max-w-[420px] md:rounded-ios-lg md:rounded-b-ios-lg"
+      transition:fly={{ y: 300, duration: 300 }}
+    >
       {#if title}
         <div class="flex items-center justify-between px-4 py-3 border-b border-ios-separator dark:border-ios-separator-dark">
           <h2 class="text-[17px] font-semibold text-ios-label dark:text-ios-label-dark">{title}</h2>

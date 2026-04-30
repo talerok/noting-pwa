@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { fade, scale } from 'svelte/transition';
   import type { Snippet } from 'svelte';
 
   interface Props {
@@ -25,10 +26,14 @@
   <!-- svelte-ignore a11y_click_events_have_key_events -->
   <!-- svelte-ignore a11y_no_static_element_interactions -->
   <div
-    class="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm transition-opacity"
+    class="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm"
     onclick={handleBackdrop}
+    transition:fade={{ duration: 200 }}
   >
-    <div class="w-[90%] max-w-[340px] rounded-ios-lg bg-ios-bg-elevated p-6 shadow-xl dark:bg-ios-bg-elevated-dark {className}">
+    <div
+      class="w-[90%] max-w-[340px] rounded-ios-lg bg-ios-bg-elevated p-6 shadow-xl dark:bg-ios-bg-elevated-dark {className}"
+      transition:scale={{ start: 0.85, duration: 200 }}
+    >
       {@render children()}
     </div>
   </div>

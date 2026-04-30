@@ -1,5 +1,6 @@
 <script lang="ts">
   import { untrack } from 'svelte';
+  import { scale } from 'svelte/transition';
   import { t } from '../../lib/i18n/index.svelte.js';
   import type { NotesStore } from '../../lib/stores/notes.svelte.js';
   import Icon from '../ui/Icon.svelte';
@@ -78,15 +79,15 @@
 
 <div class="flex h-full flex-col">
   <!-- Toolbar -->
-  <div class="safe-area-top grid grid-cols-[1fr_auto_1fr] items-center border-b border-ios-separator px-4 dark:border-ios-separator-dark" style="min-height: 44px;">
+  <div class="safe-area-top grid grid-cols-[1fr_auto_1fr] items-center border-b border-ios-separator px-4 dark:border-ios-separator-dark" style="min-height: 56px;">
     <div class="flex items-center justify-start">
       {#if isMobile}
         <button
           class="flex items-center gap-0.5 text-ios-blue active:opacity-60"
           onclick={onback}
         >
-          <Icon name="chevronLeft" size={20} />
-          <span class="text-[17px]">{t('back')}</span>
+          <Icon name="chevronLeft" size={24} />
+          <span class="text-[19px]">{t('back')}</span>
         </button>
       {/if}
     </div>
@@ -95,7 +96,7 @@
       {#if store.loadedNote?.isPinned}
         <Icon name="pin" size={16} class="text-ios-orange" />
       {/if}
-      <span class="max-w-[200px] truncate text-[17px] font-semibold text-ios-label dark:text-ios-label-dark">
+      <span class="max-w-[200px] truncate text-[19px] font-semibold text-ios-label dark:text-ios-label-dark">
         {store.loadedNote?.title ?? ''}
       </span>
     </div>
@@ -103,14 +104,14 @@
     <div class="flex items-center justify-end">
       <div class="relative">
         <button
-          class="flex h-9 w-9 items-center justify-center rounded-full text-ios-blue active:opacity-60"
+          class="flex h-10 w-10 items-center justify-center rounded-full text-ios-blue active:opacity-60"
           onclick={toggleMenu}
         >
-          <Icon name="ellipsis" size={20} />
+          <Icon name="ellipsis" size={24} />
         </button>
 
       {#if menuOpen}
-        <div class="absolute right-0 top-full z-50 mt-1 w-52 rounded-ios-lg bg-ios-bg-elevated py-1 shadow-xl dark:bg-ios-bg-elevated2-dark">
+        <div class="absolute right-0 top-full z-50 mt-1 w-52 origin-top-right rounded-ios-lg bg-ios-bg-elevated py-1 shadow-xl dark:bg-ios-bg-elevated2-dark" transition:scale={{ start: 0.9, duration: 150 }}>
           <button class="flex w-full items-center gap-2.5 px-4 py-2.5 text-[17px] text-ios-label active:bg-ios-gray5 dark:text-ios-label-dark dark:active:bg-ios-bg-elevated2-dark" onclick={() => menuAction(onRename)}>
             <Icon name="pencil" size={18} />
             <span>{t('renameNote')}</span>

@@ -43,16 +43,16 @@
 
 <div class="flex h-full flex-col">
   <!-- Toolbar -->
-  <div class="safe-area-top grid grid-cols-[1fr_auto_1fr] items-center border-b border-ios-separator px-4 dark:border-ios-separator-dark" style="min-height: 44px;">
+  <div class="safe-area-top grid grid-cols-[1fr_auto_1fr] items-center border-b border-ios-separator px-4 dark:border-ios-separator-dark" style="min-height: 56px;">
     <div class="flex items-center justify-start">
       {#if isMobile}
         <button class="flex items-center gap-0.5 text-ios-blue active:opacity-60" onclick={onback}>
-          <Icon name="chevronLeft" size={20} />
-          <span class="text-[17px]">{t('back')}</span>
+          <Icon name="chevronLeft" size={24} />
+          <span class="text-[19px]">{t('back')}</span>
         </button>
       {/if}
     </div>
-    <span class="max-w-[200px] truncate px-2 text-[17px] font-semibold text-ios-label dark:text-ios-label-dark">
+    <span class="max-w-[200px] truncate px-2 text-[19px] font-semibold text-ios-label dark:text-ios-label-dark">
       {store.loadedNote?.title ?? ''}
     </span>
     <div></div>
