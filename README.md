@@ -2,6 +2,8 @@
 
 Web port of [Noting for iOS](https://github.com/talerok/noting-swift) — a privacy-focused, encrypted note-taking app that works entirely in the browser.
 
+**[Open App](https://talerok.github.io/noting-pwa/)**
+
 ## Features
 
 - **Offline-first** — all data stored locally via OPFS, no server required
