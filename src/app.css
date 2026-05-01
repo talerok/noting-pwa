@@ -45,7 +45,7 @@
   --color-glass-bg-thick-dark: rgba(40, 40, 40, 0.70);
   --color-glass-border: rgba(255, 255, 255, 0.35);
   --color-glass-border-dark: rgba(255, 255, 255, 0.12);
-  --color-glass-input: rgba(120, 120, 128, 0.12);
+  --color-glass-input: rgba(120, 120, 128, 0.16);
   --color-glass-input-dark: rgba(120, 120, 128, 0.24);
   --color-glass-selected: rgba(0, 122, 255, 0.12);
   --color-glass-selected-dark: rgba(0, 122, 255, 0.20);
@@ -138,12 +138,11 @@ body {
 
 .glass-input {
   background: var(--color-glass-input);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 0.5px solid transparent;
+  border: 0.5px solid rgba(0, 0, 0, 0.04);
 }
 .dark .glass-input {
   background: var(--color-glass-input-dark);
+  border-color: rgba(255, 255, 255, 0.04);
 }
 
 /* Reduced transparency fallback */
